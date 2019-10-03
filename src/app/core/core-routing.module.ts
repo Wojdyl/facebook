@@ -11,6 +11,10 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
+    path: 'posts',
+    loadChildren: () => import('../posts/posts.module').then(m => m.PostsModule)
+  },
+  {
     path: '**',
     component: NotFoundPageComponent
   }
