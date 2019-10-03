@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import fakePosts from 'src/fakes/fakes-posts';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-post-list',
@@ -7,7 +6,8 @@ import fakePosts from 'src/fakes/fakes-posts';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  posts = fakePosts;
+  @Input() posts = null;
+
   constructor() { }
 
   ngOnInit() {
