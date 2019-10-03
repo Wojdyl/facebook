@@ -23,6 +23,32 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/comments/components/comment-list-item/comment-list-item.component.html":
+/*!******************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/comments/components/comment-list-item/comment-list-item.component.html ***!
+  \******************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"media my-3\">\n   <img [src]=\"getCommentAuthorAvatarUrl()\" class=\"mr-3\" alt=\"...\">\n  <div class=\"media-body\">\n    {{comment.body}}\n  </div>\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/comments/components/comment-list/comment-list.component.html":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/comments/components/comment-list/comment-list.component.html ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-comment-list-item\n  *ngFor=\"let comment of comments\"\n  [comment]=\"comment\">\n</app-comment-list-item>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/core/components/app/app.component.html":
 /*!**********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/core/components/app/app.component.html ***!
@@ -45,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar bg-primary\">\n  <h1 class=\"text-white\">Facebook</h1>\n\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\"><a class=\"nav-link text-white\" routerLinkActive=\"bg-danger\" [routerLinkActiveOptions]=\"{ exact: true }\" routerLink=\"/\">Home</a></li>\n    <li class=\"nav-item\"><a class=\"nav-link text-white\" routerLinkActive=\"bg-danger\" [routerLinkActiveOptions]=\"{ exact: true }\" routerLink=\"/not-found\">Not found</a></li>\n  </ul>\n</nav>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar bg-primary\">\n  <h1 class=\"text-white\" routerLink=\"/\">Facebook</h1>\n\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\"><a class=\"nav-link text-white\" routerLinkActive=\"bg-danger\" [routerLinkActiveOptions]=\"{ exact: true }\" routerLink=\"/\">Home</a></li>\n    <li class=\"nav-item\"><a class=\"nav-link text-white\" routerLinkActive=\"bg-danger\" [routerLinkActiveOptions]=\"{ exact: true }\" routerLink=\"/not-found\">Not found</a></li>\n  </ul>\n</nav>\n");
 
 /***/ }),
 
@@ -58,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-post-list [posts]=\"posts\"></app-post-list>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ng-container *ngIf=\"error\">\n  <app-error-message>\n    <p class=\"message\">Problem z siecią.</p>\n  </app-error-message>\n</ng-container>\n\n<app-post-list\n  [posts]=\"posts\"\n  *ngIf=\"!error\"\n>\n</app-post-list>\n");
 
 /***/ }),
 
@@ -84,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ng-container *ngIf=\"post\">\n  <div class=\"card my-3\" appHighlight>\n    <div class=\"card-header d-flex align-items-start\">\n      <img [src]=\"getPostAuthorAvatarUrl()\" class=\"avatar mr-3 rounded\">\n      <div class=\"flex-fill\">\n        <h4>{{ post?.author?.name }}</h4>\n        <a [routerLink]=\"getPostUrl()\">\n          <small>{{ post.createdTime | myDate }}</small>\n        </a>\n      </div>\n    </div>\n    <div class=\"card-body\">\n      <!--<h5 class=\"card-title\">{{ post.id }}</h5>-->\n      <p class=\"card-text\">{{ post.body }}</p>\n      <img [src]=\"post.images[0]\" class=\"card-img-top\" alt=\"...\">\n    </div>\n    <div class=\"card-footer\">\n\n    </div>\n  </div>\n</ng-container>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ng-container *ngIf=\"post\">\n  <div class=\"card my-3\" appHighlight>\n    <div class=\"card-header d-flex align-items-start\">\n      <img [src]=\"getPostAuthorAvatarUrl()\" class=\"avatar mr-3 rounded\">\n      <div class=\"flex-fill\">\n        <h4>{{ post?.author?.name }}</h4>\n        <a [routerLink]=\"getPostUrl()\">\n          <small>{{ post.createdTime | myDate }}</small>\n        </a>\n      </div>\n    </div>\n    <div class=\"card-body\">\n      <!--<h5 class=\"card-title\">{{ post.id }}</h5>-->\n      <p class=\"card-text\">{{ post.body }}</p>\n      <img [src]=\"post.images[0]\" class=\"card-img-top\" alt=\"...\">\n    </div>\n    <div class=\"card-footer\">\n      <app-comment-list></app-comment-list>\n    </div>\n  </div>\n</ng-container>\n");
 
 /***/ }),
 
@@ -98,6 +124,32 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<app-post-list-item\n  *ngFor=\"let post of posts\"\n  [post]=\"post\"\n>\n\n</app-post-list-item>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/posts/pages/post-profile-page/post-profile-page.component.html":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/posts/pages/post-profile-page/post-profile-page.component.html ***!
+  \**********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ng-container *ngIf=\"post\">\n  <div class=\"card my-3\">\n    <div class=\"card-header d-flex align-items-start\">\n      <img [src]=\"getPostAuthorUrl()\" class=\"avatar mr-3 rounded\">\n      <div class=\"flex-fill\">\n        <h4>{{ post?.author?.name }}</h4>\n        <small>{{ post.createdTime | myDate }}</small>\n      </div>\n    </div>\n    <div class=\"card-body\">\n      <!--<h5 class=\"card-title\">{{ post.id }}</h5>-->\n      <p class=\"card-text\">{{ post.body }}</p>\n      <img [src]=\"post.images[0]\" class=\"card-img-top\" alt=\"...\">\n    </div>\n    <div class=\"card-footer\">\n      <app-comment-list></app-comment-list>\n    </div>\n  </div>\n</ng-container>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/components/error-message/error-message.component.html":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/components/error-message/error-message.component.html ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"alert alert-danger\">\n  <p class=\"mb-0\">\n    <ng-content selector=\".message\"></ng-content>\n  </p>\n</div>\n");
 
 /***/ }),
 
@@ -330,6 +382,163 @@ function __importDefault(mod) {
 
 /***/ }),
 
+/***/ "./src/app/comments/comments.module.ts":
+/*!*********************************************!*\
+  !*** ./src/app/comments/comments.module.ts ***!
+  \*********************************************/
+/*! exports provided: CommentsModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommentsModule", function() { return CommentsModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _components_comment_list_comment_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/comment-list/comment-list.component */ "./src/app/comments/components/comment-list/comment-list.component.ts");
+/* harmony import */ var _components_comment_list_item_comment_list_item_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/comment-list-item/comment-list-item.component */ "./src/app/comments/components/comment-list-item/comment-list-item.component.ts");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/shared.module */ "./src/app/shared/shared.module.ts");
+
+
+
+
+
+
+let CommentsModule = class CommentsModule {
+};
+CommentsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [
+            _components_comment_list_comment_list_component__WEBPACK_IMPORTED_MODULE_3__["CommentListComponent"],
+            _components_comment_list_item_comment_list_item_component__WEBPACK_IMPORTED_MODULE_4__["CommentListItemComponent"]
+        ],
+        exports: [
+            _components_comment_list_comment_list_component__WEBPACK_IMPORTED_MODULE_3__["CommentListComponent"],
+            _components_comment_list_item_comment_list_item_component__WEBPACK_IMPORTED_MODULE_4__["CommentListItemComponent"]
+        ],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"]
+        ]
+    })
+], CommentsModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/comments/components/comment-list-item/comment-list-item.component.scss":
+/*!****************************************************************************************!*\
+  !*** ./src/app/comments/components/comment-list-item/comment-list-item.component.scss ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1lbnRzL2NvbXBvbmVudHMvY29tbWVudC1saXN0LWl0ZW0vY29tbWVudC1saXN0LWl0ZW0uY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/comments/components/comment-list-item/comment-list-item.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/comments/components/comment-list-item/comment-list-item.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: CommentListItemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommentListItemComponent", function() { return CommentListItemComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let CommentListItemComponent = class CommentListItemComponent {
+    constructor() {
+        this.comment = null;
+    }
+    ngOnInit() {
+    }
+    getCommentAuthorAvatarUrl() {
+        if (this.comment && this.comment.author) {
+            return this.comment.author.avatarUrl;
+        }
+        else {
+            return 'http://placeskull.com/50/50';
+        }
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], CommentListItemComponent.prototype, "comment", void 0);
+CommentListItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-comment-list-item',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./comment-list-item.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/comments/components/comment-list-item/comment-list-item.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./comment-list-item.component.scss */ "./src/app/comments/components/comment-list-item/comment-list-item.component.scss")).default]
+    })
+], CommentListItemComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/comments/components/comment-list/comment-list.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/app/comments/components/comment-list/comment-list.component.scss ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1lbnRzL2NvbXBvbmVudHMvY29tbWVudC1saXN0L2NvbW1lbnQtbGlzdC5jb21wb25lbnQuc2NzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/comments/components/comment-list/comment-list.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/comments/components/comment-list/comment-list.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: CommentListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommentListComponent", function() { return CommentListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let CommentListComponent = class CommentListComponent {
+    constructor() {
+        this.comments = [
+            {
+                id: 'random',
+                body: 'bodybody'
+            },
+            {
+                id: 'random2',
+                body: 'bodybody2'
+            }
+        ];
+    }
+    ngOnInit() {
+    }
+};
+CommentListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-comment-list',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./comment-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/comments/components/comment-list/comment-list.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./comment-list.component.scss */ "./src/app/comments/components/comment-list/comment-list.component.scss")).default]
+    })
+], CommentListComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/core/components/app/app.component.scss":
 /*!********************************************************!*\
   !*** ./src/app/core/components/app/app.component.scss ***!
@@ -444,6 +653,10 @@ const routes = [
         component: _pages_home_page_home_page_component__WEBPACK_IMPORTED_MODULE_3__["HomePageComponent"]
     },
     {
+        path: 'posts',
+        loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ../posts/posts.module */ "./src/app/posts/posts.module.ts")).then(m => m.PostsModule)
+    },
+    {
         path: '**',
         component: _pages_not_found_page_not_found_page_component__WEBPACK_IMPORTED_MODULE_4__["NotFoundPageComponent"]
     }
@@ -484,6 +697,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_home_page_home_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/home-page/home-page.component */ "./src/app/core/pages/home-page/home-page.component.ts");
 /* harmony import */ var _pages_not_found_page_not_found_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/not-found-page/not-found-page.component */ "./src/app/core/pages/not-found-page/not-found-page.component.ts");
 /* harmony import */ var _posts_posts_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../posts/posts.module */ "./src/app/posts/posts.module.ts");
+/* harmony import */ var _comments_comments_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../comments/comments.module */ "./src/app/comments/comments.module.ts");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../shared/shared.module */ "./src/app/shared/shared.module.ts");
+
+
 
 
 
@@ -506,7 +723,9 @@ CoreModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _core_routing_module__WEBPACK_IMPORTED_MODULE_3__["CoreRoutingModule"],
-            _posts_posts_module__WEBPACK_IMPORTED_MODULE_8__["PostsModule"]
+            _posts_posts_module__WEBPACK_IMPORTED_MODULE_8__["PostsModule"],
+            _comments_comments_module__WEBPACK_IMPORTED_MODULE_9__["CommentsModule"],
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_10__["SharedModule"]
         ],
         providers: [],
         bootstrap: [_components_app_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -550,6 +769,7 @@ let HomePageComponent = class HomePageComponent {
     constructor(postsService) {
         this.postsService = postsService;
         this.posts = null;
+        this.error = null;
     }
     ngOnInit() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
@@ -558,7 +778,12 @@ let HomePageComponent = class HomePageComponent {
     }
     setupPosts() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            this.posts = yield this.postsService.getPosts();
+            try {
+                this.posts = yield this.postsService.getPosts();
+            }
+            catch (err) {
+                this.error = err;
+            }
         });
     }
 };
@@ -731,6 +956,83 @@ PostListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/posts/pages/post-profile-page/post-profile-page.component.scss":
+/*!********************************************************************************!*\
+  !*** ./src/app/posts/pages/post-profile-page/post-profile-page.component.scss ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Bvc3RzL3BhZ2VzL3Bvc3QtcHJvZmlsZS1wYWdlL3Bvc3QtcHJvZmlsZS1wYWdlLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/posts/pages/post-profile-page/post-profile-page.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/posts/pages/post-profile-page/post-profile-page.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: PostProfilePageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostProfilePageComponent", function() { return PostProfilePageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_posts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/posts.service */ "./src/app/posts/services/posts.service.ts");
+
+
+
+
+let PostProfilePageComponent = class PostProfilePageComponent {
+    constructor(route, router, postsService) {
+        this.route = route;
+        this.router = router;
+        this.postsService = postsService;
+        this.post = null;
+    }
+    ngOnInit() {
+        this.setupPost();
+    }
+    getPostById() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+        });
+    }
+    getPostAuthorUrl() {
+        return this.post.author.avatarUrl;
+    }
+    setupPost() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const postId = this.route.snapshot.params.postId;
+            const post = yield this.postsService.getPostById(postId);
+            if (!post) {
+                this.router.navigateByUrl('/not-found');
+                return;
+            }
+            this.post = post;
+        });
+    }
+};
+PostProfilePageComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _services_posts_service__WEBPACK_IMPORTED_MODULE_3__["PostsService"] }
+];
+PostProfilePageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-post-profile-page',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./post-profile-page.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/posts/pages/post-profile-page/post-profile-page.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./post-profile-page.component.scss */ "./src/app/posts/pages/post-profile-page/post-profile-page.component.scss")).default]
+    })
+], PostProfilePageComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/posts/posts-routing.module.ts":
 /*!***********************************************!*\
   !*** ./src/app/posts/posts-routing.module.ts ***!
@@ -744,10 +1046,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _pages_post_profile_page_post_profile_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/post-profile-page/post-profile-page.component */ "./src/app/posts/pages/post-profile-page/post-profile-page.component.ts");
 
 
 
-const routes = [];
+
+const routes = [
+    {
+        path: ':postId',
+        component: _pages_post_profile_page_post_profile_page_component__WEBPACK_IMPORTED_MODULE_3__["PostProfilePageComponent"]
+    }
+];
 let PostsRoutingModule = class PostsRoutingModule {
 };
 PostsRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -779,6 +1088,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_post_list_item_post_list_item_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/post-list-item/post-list-item.component */ "./src/app/posts/components/post-list-item/post-list-item.component.ts");
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/shared.module */ "./src/app/shared/shared.module.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _pages_post_profile_page_post_profile_page_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/post-profile-page/post-profile-page.component */ "./src/app/posts/pages/post-profile-page/post-profile-page.component.ts");
+/* harmony import */ var _comments_comments_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../comments/comments.module */ "./src/app/comments/comments.module.ts");
+
+
 
 
 
@@ -793,7 +1106,8 @@ PostsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
             _components_post_list_post_list_component__WEBPACK_IMPORTED_MODULE_4__["PostListComponent"],
-            _components_post_list_item_post_list_item_component__WEBPACK_IMPORTED_MODULE_5__["PostListItemComponent"]
+            _components_post_list_item_post_list_item_component__WEBPACK_IMPORTED_MODULE_5__["PostListItemComponent"],
+            _pages_post_profile_page_post_profile_page_component__WEBPACK_IMPORTED_MODULE_8__["PostProfilePageComponent"]
         ],
         exports: [
             _components_post_list_post_list_component__WEBPACK_IMPORTED_MODULE_4__["PostListComponent"],
@@ -803,7 +1117,8 @@ PostsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _posts_routing_module__WEBPACK_IMPORTED_MODULE_3__["PostsRoutingModule"],
             _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"]
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
+            _comments_comments_module__WEBPACK_IMPORTED_MODULE_9__["CommentsModule"]
         ]
     })
 ], PostsModule);
@@ -845,6 +1160,14 @@ let PostsService = class PostsService {
             return response;
         });
     }
+    getPostById(postId) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const posts = yield this.getPosts();
+            return posts.find((post) => {
+                return post.id === postId;
+            });
+        });
+    }
 };
 PostsService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
@@ -854,6 +1177,50 @@ PostsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], PostsService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/error-message/error-message.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/app/shared/components/error-message/error-message.component.scss ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2Vycm9yLW1lc3NhZ2UvZXJyb3ItbWVzc2FnZS5jb21wb25lbnQuc2NzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/shared/components/error-message/error-message.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/shared/components/error-message/error-message.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: ErrorMessageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ErrorMessageComponent", function() { return ErrorMessageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let ErrorMessageComponent = class ErrorMessageComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+ErrorMessageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-error-message',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./error-message.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/components/error-message/error-message.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./error-message.component.scss */ "./src/app/shared/components/error-message/error-message.component.scss")).default]
+    })
+], ErrorMessageComponent);
 
 
 
@@ -879,13 +1246,11 @@ let HighlightDirective = class HighlightDirective {
         this.renderer = renderer;
     }
     mouseoverHandler() {
-        console.log('mouseleave');
         const $element = this.element.nativeElement;
         this.renderer.addClass($element, 'border');
         this.renderer.addClass($element, 'border-primary');
     }
     mouseleaveHandler() {
-        console.log('mouseleave');
         const $element = this.element.nativeElement;
         this.renderer.removeClass($element, 'border');
         this.renderer.removeClass($element, 'border-primary');
@@ -1007,6 +1372,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _directives_highlight_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./directives/highlight.directive */ "./src/app/shared/directives/highlight.directive.ts");
 /* harmony import */ var _pipes_my_date_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pipes/my-date.pipe */ "./src/app/shared/pipes/my-date.pipe.ts");
+/* harmony import */ var _components_error_message_error_message_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/error-message/error-message.component */ "./src/app/shared/components/error-message/error-message.component.ts");
+
 
 
 
@@ -1018,11 +1385,13 @@ SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
             _directives_highlight_directive__WEBPACK_IMPORTED_MODULE_3__["HighlightDirective"],
-            _pipes_my_date_pipe__WEBPACK_IMPORTED_MODULE_4__["MyDatePipe"]
+            _pipes_my_date_pipe__WEBPACK_IMPORTED_MODULE_4__["MyDatePipe"],
+            _components_error_message_error_message_component__WEBPACK_IMPORTED_MODULE_5__["ErrorMessageComponent"]
         ],
         exports: [
             _directives_highlight_directive__WEBPACK_IMPORTED_MODULE_3__["HighlightDirective"],
-            _pipes_my_date_pipe__WEBPACK_IMPORTED_MODULE_4__["MyDatePipe"]
+            _pipes_my_date_pipe__WEBPACK_IMPORTED_MODULE_4__["MyDatePipe"],
+            _components_error_message_error_message_component__WEBPACK_IMPORTED_MODULE_5__["ErrorMessageComponent"]
         ],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
