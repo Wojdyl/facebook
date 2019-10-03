@@ -8,6 +8,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import {PostsModule} from '../posts/posts.module';
 import {CommentsModule} from '../comments/comments.module';
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {CommentsModule} from '../comments/comments.module';
     BrowserModule,
     CoreRoutingModule,
     PostsModule,
-    CommentsModule
+    CommentsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

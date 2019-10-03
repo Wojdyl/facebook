@@ -8,6 +8,7 @@ import {PostsService} from '../../../posts/services/posts.service';
 })
 export class HomePageComponent implements OnInit {
   posts = null;
+  error = null;
 
   constructor(private postsService: PostsService) {
   }
@@ -17,7 +18,11 @@ export class HomePageComponent implements OnInit {
   }
 
   private async setupPosts() {
-    this.posts = await this.postsService.getPosts();
+    try {
+      this.posts = await this.postsService.getPosts();
+    } catch (err) {
+      this.error = err;
+    }
   }
 
 }
