@@ -21,5 +21,5 @@ export function sortByOperator ( key ) {
     return sortBy(list, (item) => {
       return new Date(item[key]);
     });
-  })
+  });
 }
