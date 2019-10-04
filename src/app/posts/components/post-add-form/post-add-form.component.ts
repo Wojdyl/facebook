@@ -37,7 +37,7 @@ export class PostAddFormComponent implements OnInit {
       name: faker.name.findName(),
       avatarUrl: "http://placeskull.com/50/50/9a2543",
     };
-    post.images = "http://placeskull.com/50/50/9a2543";
+    post.images = faker.image.food();
     post.comments = [
       {
         id: 'random',
