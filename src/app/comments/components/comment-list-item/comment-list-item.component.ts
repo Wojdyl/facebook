@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { IComment } from 'src/app/shared/interfaces/comment.interface';
 
 @Component({
@@ -8,6 +8,8 @@ import { IComment } from 'src/app/shared/interfaces/comment.interface';
 })
 export class CommentListItemComponent implements OnInit {
   @Input() comment: IComment = null;
+
+  @Output() deleteComment = new EventEmitter();
 
   constructor() { }
 
@@ -20,6 +22,11 @@ export class CommentListItemComponent implements OnInit {
     } else {
       return 'http://placeskull.com/50/50';
     }
+  }
+
+  onRemove() {
+    console.log('deleteComment');
+    this.deleteComment.emit(this.comment);
   }
 
 }

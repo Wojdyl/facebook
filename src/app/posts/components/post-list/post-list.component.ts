@@ -21,4 +21,11 @@ export class PostListComponent implements OnInit {
     this.posts.unshift(post);
   }
 
+  removePost(post) {
+    const idx = this.posts.indexOf(post);
+    if ( idx !== -1 ) {
+      this.posts.splice(idx, 1);
+    }
+  }
+
 }

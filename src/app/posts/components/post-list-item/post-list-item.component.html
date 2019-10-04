@@ -4,18 +4,20 @@
         appHighlight
     >
         <div class="card-header d-flex align-items-start">
-            <img
-                [src]="getPostAuthorUrl()"
-                class="avatar mr-3 rounded"
-                alt
-            >
-            <div class="flex-fill">
+          <img
+              [src]="getPostAuthorUrl()"
+              class="avatar mr-3 rounded"
+              alt
+          >
+          <div class="flex-fill">
 
-                <h4>{{post.author.name}}</h4>
-                <a [routerLink]="getPostUrl()">
-                    <small>{{post.createdTime | myDate}}</small>
-                </a>
-            </div>
+              <h4>{{post.author.name}}</h4>
+              <a [routerLink]="getPostUrl()">
+                  <small>{{post.createdTime | myDate}}</small>
+              </a>
+          </div>
+
+          <button class="btn btn-small btn-danger" (click)="onRemove($event)">X</button>
         </div>
       <!--<ng-container ngIf>  -->
       <img

@@ -14,10 +14,15 @@ export class CommentListComponent implements OnInit {
   ngOnInit() {
   }
 
-
   addComment(comment) {
-    // console.log("addComment", comment);
     this.comments.push(comment);
+  }
+
+  deleteComment(comment) {
+    const idx = this.comments.indexOf(comment);
+    if ( idx !== -1 ) {
+      this.comments.splice(idx, 1);
+    }
   }
 
 }

@@ -1,6 +1,8 @@
-<app-post-add-form (addPost)="addPost($event)"
+<app-post-add-form
+  (addPost)="addPost($event)"
 ></app-post-add-form>
 
 <app-post-list-item 
   *ngFor="let post of posts" [post]="post"
+  (deletePost)="removePost($event)"
 ></app-post-list-item>
