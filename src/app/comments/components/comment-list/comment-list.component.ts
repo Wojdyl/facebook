@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { ICommentList } from 'src/app/shared/interfaces/comment-list.interface';
 
 @Component({
@@ -7,24 +7,16 @@ import { ICommentList } from 'src/app/shared/interfaces/comment-list.interface';
   styleUrls: ['./comment-list.component.scss']
 })
 export class CommentListComponent implements OnInit {
-  comments = [
-    {
-      id: 'random',
-      body: 'bodybody'
-    },
-    {
-      id: 'random2',
-      body: 'bodybody2'
-    }
-  ] as ICommentList;
+  @Input() comments: ICommentList = null;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+
   addComment(comment) {
-    console.log('addComent', comment);
+    // console.log("addComment", comment);
     this.comments.push(comment);
   }
 

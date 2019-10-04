@@ -1,0 +1,29 @@
+<div class="card my-3">
+    <div class="card-body">
+        <form
+            [formGroup]="addPostForm"
+            (submit)="onSubmit()"
+        >
+            <div class="form-group row">
+                <div class="col-9">
+                    <textarea
+                        name="body"
+                        class="form-control"
+                        rows="3"
+                        placeholder="Enter post.."
+                        formControlName="body"
+                    ></textarea>
+                </div>
+                <div class="col-2">
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Dodaj
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

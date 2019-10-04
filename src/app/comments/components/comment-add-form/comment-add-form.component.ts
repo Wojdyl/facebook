@@ -28,7 +28,7 @@ export class CommentAddFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  onSubmit(addForm) {
     const comment = Object.assign({}, this.comment);
     const currentDate = new Date();
     comment.id = uuid.v4();
@@ -38,6 +38,7 @@ export class CommentAddFormComponent implements OnInit {
     comment.author.name = faker.name.findName();
 
     this.addComment.emit(comment);
+    addForm.reset();
   }
 
 }

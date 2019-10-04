@@ -13,7 +13,7 @@
       <img [src]="post.images[0]" class="card-img-top" alt="...">
     </div>
     <div class="card-footer">
-      <app-comment-list></app-comment-list>
+      <app-comment-list [comments]="post.comments"></app-comment-list>
     </div>
   </div>
 </ng-container>
