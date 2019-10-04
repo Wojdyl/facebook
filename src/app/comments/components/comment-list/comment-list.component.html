@@ -2,3 +2,7 @@
   *ngFor="let comment of comments"
   [comment]="comment">
 </app-comment-list-item>
+
+<app-comment-add-form
+  (addComment)="addComment($event)"
+></app-comment-add-form>
