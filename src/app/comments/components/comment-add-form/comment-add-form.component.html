@@ -5,15 +5,31 @@
         type="email"
         class="form-control"
         name="body"
+        #body="ngModel"
         placeholder="Wpisz komentarz.."
         [(ngModel)]="comment.body"
+        minlength="2"
+        required
       >
+      <!--<pre>{{ body.errors | json }}</pre>-->
+      <!--<pre>touched {{ body.touched }}</pre>-->
+      <!--<pre>untouched {{ body.untouched }}</pre>-->
+      <!--<pre>dirty {{ body.dirty }}</pre>-->
+      <!--<pre>pristine {{ body.pristine }}</pre>-->
+      <!--<pre>valid {{ body.valid }}</pre>-->
+      <!--<pre>invalid {{ body.invalid }}</pre>-->
+      <small *ngIf="body.errors && body.dirty" class="text-danger">
+        <span *ngIf="body.errors?.required">Aby dodać komentarzw, wpisz tekst</span>
+        <span *ngIf="body.errors?.minlength">Za mało znaków!</span>
+      </small>
     </div>
     <div class="col-2">
       <button
         type="submit"
         class="btn btn-primary"
+        [disabled]="addForm.invalid"
       >Dodaj</button>
     </div>
+
   </div>
 </form>

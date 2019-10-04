@@ -4,26 +4,33 @@
             [formGroup]="addPostForm"
             (submit)="onSubmit()"
         >
-            <div class="form-group row">
-                <div class="col-9">
-                    <textarea
-                        name="body"
-                        class="form-control"
-                        rows="3"
-                        placeholder="Enter post.."
-                        formControlName="body"
-                    ></textarea>
-                </div>
-                <div class="col-2">
-                    <button
-                        type="submit"
-                        class="btn btn-primary"
-                    >
-                        Dodaj
-                    </button>
-                </div>
-            </div>
+          <div class="form-group row">
+            <div class="col-9">
+                <textarea
+                    name="body"
+                    class="form-control"
+                    rows="3"
+                    placeholder="Enter post.."
+                    formControlName="body"
+                ></textarea>
 
+            </div>
+            <div class="col-2">
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Dodaj
+                </button>
+            </div>
+          </div>
+
+          <div class="text-danger row">
+            <small class="text-danger">
+              <span *ngIf="body.invalid && body.dirty">Aby dodać post, wpisz tekst</span><br/>
+              <span *ngIf="body.errors?.minlength">Za mało znaków!</span>
+            </small>
+          </div>
         </form>
     </div>
 </div>

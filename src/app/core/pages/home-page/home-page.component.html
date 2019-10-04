@@ -1,3 +1,7 @@
+<ng-container *ngIf="isDisplayLoader()">
+  <app-loading></app-loading>
+</ng-container>
+
 <ng-container *ngIf="error">
   <app-error-message>
     <p class="message">Problem z siecią.</p>

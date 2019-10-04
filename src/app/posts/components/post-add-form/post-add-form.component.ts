@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import uuid from 'uuid';
 import faker from 'faker';
 
@@ -11,8 +11,15 @@ import faker from 'faker';
 export class PostAddFormComponent implements OnInit {
 
   addPostForm = new FormGroup({
-    body: new FormControl('ciasteczko'),
+    body: new FormControl('',[
+      Validators.required,
+    Validators.minLength(2)
+    ])
   });
+
+  get body () {
+    return this.addPostForm.get('body');
+  }
 
   @Output() addPost = new EventEmitter();
 
@@ -30,13 +37,13 @@ export class PostAddFormComponent implements OnInit {
       name: faker.name.findName(),
       avatarUrl: "http://placeskull.com/50/50/9a2543",
     };
-    post.images = faker.image.imageUrl(400,400,"people");
+    post.images = faker.image.city();
     post.comments = [
       {
         id: 'random',
         body: 'bodybody'
       }
-    ]
+    ];
     this.addPost.emit(post);
     this.addPostForm.reset();
 
